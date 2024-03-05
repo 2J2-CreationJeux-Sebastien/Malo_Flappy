@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System;
 
 public class controlleurText : MonoBehaviour
 {
     public TextMeshPro pointageTxt;
-    public TextMeshPro pointage;
+    public TextMeshProUGUI pointage;
     public TextMeshPro FinDeJeu;
-    public int score;
+    int score;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class controlleurText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(score);
     }
 
     void OnCollisionEnter2D(Collision2D infoObjetToucher)
