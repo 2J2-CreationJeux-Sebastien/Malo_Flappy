@@ -27,7 +27,7 @@ public class controllerBird : MonoBehaviour
     public AudioClip sonPieceOr;  
     public AudioClip sonPieceColonne; 
     public AudioClip sonFinDeJeu; 
-    public AudioClip sonBackground; 
+
 
     public TextMeshProUGUI pointageTxt;
     public TextMeshProUGUI pointage;
