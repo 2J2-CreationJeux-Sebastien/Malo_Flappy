@@ -22,6 +22,12 @@ public class controllerBird : MonoBehaviour
     public GameObject packVie;
     public GameObject champi;
     public GameObject elementGrillage;
+    public AudioClip sonChampignon;  
+    public AudioClip sonPackVie;  
+    public AudioClip sonPieceOr;  
+    public AudioClip sonPieceColonne; 
+    public AudioClip sonFinDeJeu; 
+    public AudioClip sonBackground; 
 
     public TextMeshProUGUI pointageTxt;
     public TextMeshProUGUI pointage;
@@ -94,7 +100,7 @@ public class controllerBird : MonoBehaviour
             score += 5;
             pointage.text = score.ToString();
             elementGrillage.GetComponent<Animator>().enabled = true; 
-            Invoke("AnimationGrilleFalse", 4f)
+            Invoke("AnimationGrilleFalse", 4f);
         }
 
         else if (infoObjetToucher.gameObject.name == "PackVie")
