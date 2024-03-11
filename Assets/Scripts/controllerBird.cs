@@ -21,6 +21,7 @@ public class controllerBird : MonoBehaviour
     public GameObject goldCoin;
     public GameObject packVie;
     public GameObject champi;
+    public GameObject elementGrillage;
 
     public TextMeshProUGUI pointageTxt;
     public TextMeshProUGUI pointage;
@@ -92,6 +93,8 @@ public class controllerBird : MonoBehaviour
             Invoke("ActiverGoldCoin", itemRespawnRate);
             score += 5;
             pointage.text = score.ToString();
+            elementGrillage.GetComponent<Animator>().enabled = true; 
+            Invoke("AnimationGrilleFalse", 4f)
         }
 
         else if (infoObjetToucher.gameObject.name == "PackVie")
@@ -159,5 +162,9 @@ public class controllerBird : MonoBehaviour
     {
         SceneManager.LoadScene("flappyBird3");
         finDeJeu.gameObject.SetActive(false);
+    }
+    void AnimationGrilleFalse()
+    {
+        elementGrillage.GetComponent<Animator>().enabled = false; 
     }
 }
