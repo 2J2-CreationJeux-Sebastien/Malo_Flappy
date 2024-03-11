@@ -157,7 +157,7 @@ public class controllerBird : MonoBehaviour
 
     void ReloadScene()
     {
-        SceneManager.LoadScene("flappyBird");
+        SceneManager.LoadScene("flappyBird3");
         finDeJeu.gameObject.SetActive(false);
     }
 }
