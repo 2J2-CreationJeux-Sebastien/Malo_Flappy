@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/flappyBird 4.unity
+    guid: 16f72d712b4ad054d98dc47c562cf464
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

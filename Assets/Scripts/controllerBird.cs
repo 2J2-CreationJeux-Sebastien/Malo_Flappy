@@ -25,7 +25,7 @@ public class controllerBird : MonoBehaviour
     public AudioClip sonChampignon;  
     public AudioClip sonPackVie;  
     public AudioClip sonPieceOr;  
-    public AudioClip sonPieceColonne; 
+    public AudioClip sonColonne; 
     public AudioClip sonFinDeJeu; 
 
 
@@ -101,6 +101,7 @@ public class controllerBird : MonoBehaviour
             pointage.text = score.ToString();
             elementGrillage.GetComponent<Animator>().enabled = true; 
             Invoke("AnimationGrilleFalse", 4f);
+            GetComponent<AudioSource>().PlayOneShot(sonPieceOr);
         }
 
         else if (infoObjetToucher.gameObject.name == "PackVie")
@@ -111,6 +112,7 @@ public class controllerBird : MonoBehaviour
             Invoke("ActiverPackVie", itemRespawnRate);
             score += 5;
             pointage.text = score.ToString();
+            GetComponent<AudioSource>().PlayOneShot(sonPackVie);
         }
 
         else if (infoObjetToucher.gameObject.name == "Champingon")
@@ -121,12 +123,14 @@ public class controllerBird : MonoBehaviour
             Invoke("PetitFlappy", 5f);
             score += 10;
             pointage.text = score.ToString();
+            GetComponent<AudioSource>().PlayOneShot(sonChampignon);
         }
 
         else if (infoObjetToucher.gameObject.name == "Colonne_Haut" || infoObjetToucher.gameObject.name == "Colonne_Bas")
         {
             score -= 5;
             pointage.text = score.ToString();
+            GetComponent<AudioSource>().PlayOneShot(sonColonne);
             if (flappyBlesse  == false) 
             {
                 flappyBlesse = true;
@@ -140,6 +144,7 @@ public class controllerBird : MonoBehaviour
                 GetComponent<Rigidbody2D>().angularVelocity = -90f;
                 GetComponent<Collider2D>().enabled = false;
                 finDeJeu.gameObject.SetActive(true);
+                GetComponent<AudioSource>().PlayOneShot(sonFinDeJeu);
             }
         }
     }
@@ -166,7 +171,7 @@ public class controllerBird : MonoBehaviour
 
     void ReloadScene()
     {
-        SceneManager.LoadScene("flappyBird3");
+        SceneManager.LoadScene("flappyBird 5");
         finDeJeu.gameObject.SetActive(false);
     }
     void AnimationGrilleFalse()
